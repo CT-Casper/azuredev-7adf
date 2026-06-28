@@ -38,7 +38,7 @@ If you do this, some additional directories will be created:
 
 *Note*: Once you have generated your infrastructure to disk, those files are the source of truth for azd. Any changes made to `azure.yaml` (such as through `azd add`) will not be reflected in the infrastructure until you regenerate it with `azd infra gen` again. It will prompt you before overwriting files. You can pass `--force` to force `azd infra gen` to overwrite the files without prompting.
 
-Finally, run `azd pipeline config` to configure a CI/CD deployment pipeline.
+Finally, run `azd pipeline configure` to configure a CI/CD deployment pipeline.
 
 ## Billing
 

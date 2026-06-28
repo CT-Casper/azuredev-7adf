@@ -12,7 +12,7 @@ param location string
 @metadata({azd: {
   type: 'location'
   usageName: [
-    'OpenAI.Standard.gpt4.1,10'
+    'OpenAI.Standard.gpt4.1,1'
   ]}
 })
 param aiDeploymentsLocation string
@@ -74,7 +74,7 @@ module aiModelsDeploy 'ai-project.bicep' = {
         }
         sku: {
           name: 'Standard'
-          capacity: 10
+          capacity: 1
         }
       }
     ]
