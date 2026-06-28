@@ -1,3 +1,7 @@
+metadata = {
+  description: 'Azure resource deployment'
+}
+
 targetScope = 'resourceGroup'
 
 param location string = resourceGroup().location
