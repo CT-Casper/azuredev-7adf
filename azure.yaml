@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: azuredev-7adf
+metadata:
+    template: azd-init@1.26.0
+services:
+    azuredev-7adf:
+        project: .
+        host: containerapp
+        language: python
+resources:
+    azuredev-7adf:
+        type: host.containerapp
+        port: 80
