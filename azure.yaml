@@ -1,14 +1,29 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
-
 name: azuredev-7adf
 metadata:
-    template: azd-init@1.26.0
+  template: azd-init@1.26.0
 services:
-    azuredev-7adf:
-        project: .
-        host: containerapp
-        language: python
+  azuredev-7adf:
+    project: .
+    host: containerapp
+    language: python
 resources:
-    azuredev-7adf:
-        type: host.containerapp
-        port: 80
+  azuredev-7adf:
+    type: host.containerapp
+    port: 80
+    uses:
+      - ai-project
+      - slot-resource
+  ai-project:
+    type: ai.project
+    models:
+      - name: gpt-4.1
+        version: "2025-04-14"
+        format: OpenAI
+        sku:
+          name: Standard
+          usageName: OpenAI.Standard.gpt4.1
+          capacity: 10
+  slot-resource:
+    type: ai.openai.model
+    existing: true

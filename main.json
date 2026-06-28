@@ -13,21 +13,23 @@
       "type": "string",
       "defaultValue": "[resourceGroup().location]"
     },
-    "storageAccountName": {
+    "acctName": {
       "type": "string",
-      "defaultValue": "[format('st{0}', uniqueString(resourceGroup().id))]"
+      "minLength": 3,
+      "maxLength": 24,
+      "defaultValue": "[toLower(substring(format('st{0}', uniqueString(resourceGroup().id)), 0, 24))]"
     }
   },
   "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2023-01-01",
-      "name": "[parameters('storageAccountName')]",
+      "apiVersion": "2016-01-01",
+      "name": "[parameters('acctName')]",
       "location": "[parameters('location')]",
       "sku": {
         "name": "Standard_LRS"
       },
-      "kind": "StorageV2",
+      "kind": "Storage",
       "properties": {
         "accessTier": "Hot"
       }
