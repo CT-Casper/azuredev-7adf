@@ -1,3 +1,5 @@
+targetScope = 'resourceGroup'
+
 param location string = resourceGroup().location
 param storageAccountName string = uniqueString(resourceGroup().id)
 
